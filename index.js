@@ -141,7 +141,8 @@ db.sequelize.sync({ force: false, alter:true}).then(()=>{
         console.log("Already set up");
     });
 
-    app.listen(33123, ()=>{
-        console.log("Listening on port: 33123");
+    const PORT = process.env.PORT || 33123;
+    app.listen(PORT, ()=>{
+        console.log(`Listening on port: ${PORT}`);
     });
 });
